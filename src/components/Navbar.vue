@@ -3,10 +3,8 @@
 
     <!-- Perfil -->
     <div class="profile-section">
-
       <div class="avatar">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="5px" height="5px" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
         </svg>
       </div>
@@ -29,12 +27,7 @@
       <span class="section-label">PRINCIPAL</span>
       <ul class="nav-list">
         <li>
-          <a 
-            href="#" 
-            class="nav-item" 
-            :class="{ active: activeMenu === 'dashboard' }"
-            @click.prevent="setActive('dashboard')"
-          >
+          <a href="#" class="nav-item" :class="{ active: activeMenu === 'dashboard' }" @click.prevent="setActive('dashboard')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="3" y="3" width="7" height="7" rx="1"/>
               <rect x="14" y="3" width="7" height="7" rx="1"/>
@@ -46,12 +39,7 @@
         </li>
 
         <li>
-          <a 
-            href="#" 
-            class="nav-item" 
-            :class="{ active: activeMenu === 'graficos' }"
-            @click.prevent="setActive('graficos')"
-          >
+          <a href="#" class="nav-item" :class="{ active: activeMenu === 'graficos' }" @click.prevent="setActive('graficos')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
             </svg>
@@ -60,12 +48,7 @@
         </li>
 
         <li>
-          <a 
-            href="#" 
-            class="nav-item" 
-            :class="{ active: activeMenu === 'perfil' }"
-            @click.prevent="setActive('perfil')"
-          >
+          <a href="#" class="nav-item" :class="{ active: activeMenu === 'perfil' }" @click.prevent="setActive('perfil')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <circle cx="12" cy="8" r="4"/>
               <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
@@ -73,7 +56,6 @@
             Perfil
           </a>
         </li>
-        
       </ul>
     </nav>
 
@@ -84,12 +66,7 @@
       <span class="section-label">MOVIMIENTOS</span>
       <ul class="nav-list">
         <li>
-          <a 
-            href="#" 
-            class="nav-item" 
-            :class="{ active: activeMenu === 'historial' }"
-            @click.prevent="setActive('historial')"
-          >
+          <a href="#" class="nav-item" :class="{ active: activeMenu === 'historial' }" @click.prevent="setActive('historial')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="5" y="2" width="14" height="20" rx="2"/>
               <line x1="9" y1="7" x2="15" y2="7"/>
@@ -100,12 +77,7 @@
           </a>
         </li>
         <li>
-          <a 
-            href="#" 
-            class="nav-item" 
-            :class="{ active: activeMenu === 'consultar' }"
-            @click.prevent="setActive('consultar')"
-          >
+          <a href="#" class="nav-item" :class="{ active: activeMenu === 'consultar' }" @click.prevent="setActive('consultar')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <circle cx="11" cy="11" r="7"/>
               <line x1="16.5" y1="16.5" x2="21" y2="21"/>
@@ -125,17 +97,15 @@
 export default {
   data() {
     return {
-      activeMenu: 'dashboard' // Dashboard comienza como activo por defecto
+      activeMenu: 'dashboard'
     }
   },
   methods: {
     setActive(menu) {
       this.activeMenu = menu
-      // Aquí puedes agregar lógica adicional como emitir eventos o cambiar rutas
       this.$emit('menu-changed', menu)
     },
     handleLogout() {
-      // Lógica para cerrar sesión
       console.log('Cerrando sesión...')
     }
   }
@@ -143,5 +113,6 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>

@@ -1,55 +1,50 @@
-/* =========================================
-   🔹 VARIABLES
-========================================= */
-
-:root {
-    --background: rgba(15, 23, 42, 0.97);
-    --border-color: rgba(59, 130, 246, 0.25);
-    --title: linear-gradient(135deg, #60a5fa, #3b82f6); /* color al texto y debe de tener estos estilos background-clip: text;
-    color: transparent; */
-    --color: #60a5fa;
-    --color-inactive: #9ca3af;
-    --btn-color: rgb(0 97 255 / 15%);
-}
-
-/* =========================================
-   🔹 RESET
-========================================= */
-*, *::before, *::after {
+/* =========================================================
+   📌 BODY
+   Estilos del navegador para la pagina
+========================================================= */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--background);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* =========================================
-   🔹 NAVBAR
-========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap');
-
-.sidebar {
-  font-family: 'DM Sans', sans-serif;
-  width: 240px;
-  height: 100vh;
-  background-color: var(--background);
-
+.app-layout {
   display: flex;
-  flex-direction: column;
-  padding: 28px 0;
+  min-height: 100vh;
+}
 
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  min-height: 100vh;
+  background-color: #0d1117;
+  overflow-y: auto;
+}
+
+/* =========================================================
+   📌 NAVBAR
+   Estilos de la barra de navegación izquierda
+========================================================= */
+
+/* ── Sidebar fijo a la izquierda ── */
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
-
+  width: 260px;
+  height: 100vh;
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 0 20px 0;
   overflow-y: auto;
-  overflow-x: hidden;
-
-  border-right: 1px solid var(--border-color);
+  z-index: 100;
+  border-right: 1px solid rgba(99, 120, 180, 0.12);
 }
 
 /* ── Perfil ── */
@@ -57,52 +52,57 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0 24px;
   gap: 6px;
+  padding: 0 20px 20px 20px;
 }
 
 .avatar {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #a855f7);;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .avatar svg {
-  width: 34px;
-  height: 34px;
-  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  color: #fff;
 }
 
 .user-name {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 600;
-  color: #e8eaf0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  text-align: center;
 }
 
 .user-role {
-  font-size: 12.5px;
-  color: #b2b2b5;
+  font-size: 0.78rem;
+  color: #94a3b8;
 }
 
 .logout-btn {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   margin-top: 8px;
-  color: #ee3c3c;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #ea4747;
   text-decoration: none;
-  transition: background 0.18s;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.5s ease;
+}
+
+.logout-btn:hover {
+  color: white;
+  background: linear-gradient(135deg, #ea4747, #ea5a5a);
+  transform: translateX(2px);
+  box-shadow: 0 4px 10px rgba(234, 71, 71, 0.3);
 }
 
 .logout-btn svg {
@@ -110,70 +110,541 @@ body {
   height: 15px;
 }
 
-.logout-btn:hover {
-  background: rgba(224, 81, 81, 0.1);
-}
-
-/* ── Divisor ── */
+/* ── Divider ── */
 .divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.06);
-  margin: 0 0 18px;
+  background: rgba(99, 120, 180, 0.15);
+  margin: 4px 20px 12px 20px;
 }
 
-/* ── Secciones nav ── */
+/* ── Navegación ── */
 .nav-section {
-  padding: 0 25px;
-  margin-bottom: 18px;
+  padding: 0 12px;
+  margin-bottom: 8px;
 }
 
 .section-label {
   display: block;
-  font-size: 10.5px;
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  color: #4b5563;
-  padding: 0 10px;
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  color: #475569;
+  padding: 0 8px 8px 8px;
+  text-transform: uppercase;
 }
 
 .nav-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-/* ── Items nav ── */
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   padding: 10px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #9ca3af;
+  border-radius: 8px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.88rem;
+  color: #94a3b8;
   text-decoration: none;
-  transition: background 0.18s, color 0.18s;
-}
-
-.nav-item:hover {
-  background: var(--btn-color);
-  color: var(--color);
-}
-
-.nav-item.active {
-  background: var(--btn-color);
-  color: var(--color);
-  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
 }
 
 .nav-item svg {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background: rgba(99, 120, 180, 0.1);
+  color: #60a5fa;
+}
+
+.nav-item.active {
+  background: #1e3a5f;
+  color: #60a5fa;
+  font-weight: bold;
+}
+
+/* =========================================================
+   📌 Dashboard
+   Estilos de la pagina principal de finanzas.
+========================================================= */
+
+.dashboard-wrapper {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+.dashboard-banner {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  padding: 32px 36px;
+}
+
+.banner-title {
+  margin: 0 0 8px 0;
+  font-size: 2.40rem;
+  font-weight: 700;
+  color: #60a5fa;
+  letter-spacing: -0.5px;
+}
+
+.banner-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.cards-grid--bottom {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  background: linear-gradient(145deg, #131e2e, #1a2540);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.5s, transform 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+}
+
+.card-label {
+  font-size: 0.80rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-wrapper {
+    padding: 16px;
+  }
+  .banner-title {
+    font-size: 1.5rem;
+  }
+  .card-value {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* =========================================================
+   📌 SELECCIONAR MES
+========================================================= */
+
+
+.month-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  color: #60a5fa;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.carousel-wrapper {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.carousel-outer {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+  padding-top: 28px;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.month-card {
+  flex: 0 0 330px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(59, 130, 246, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 30px;
+  padding: 18px 16px;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: all 0.3s ease;
+}
+
+.month-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.15);
+}
+
+.month-card.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: #3b82f6;
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
+  transform: translateY(-1px);
+}
+
+.month-card-title {
+  font-size: 1.10rem;
+  font-weight: 700;
+  color: #60a5fa;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.month-card.active .month-card-title{
+  color: white;
+}
+
+.month-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 8px;
+}
+
+.month-card-row:last-child {
+  border-bottom: none;
+}
+
+.month-card.active .row-label{
+  color: #d9f99d;
+}
+
+.row-label {
+  font-size: 0.86rem;
+  font-weight: bold;
+  color: #60a5fa;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.row-value {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Botones nav */
+.btn-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.85);
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.btn-nav:hover {
+  background: #3b82f6;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.btn-prev { left: -14px; }
+.btn-next { right: -14px; }
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(99, 128, 200, 0.4);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: #3b82f6;
+  transform: scale(1.25);
+}
+
+/* =========================================================
+   📌 MOVIMIENTOS
+   Estilos del apartado de tablas de movimientos
+========================================================= */
+
+/* ── Wrapper principal ── */
+.movimientos-wrapper {
+  padding: 24px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header ── */
+.mov-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mov-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+/* ── Botón agregar ── */
+.btn-agregar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-agregar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.45);
+}
+
+/* ── Barra de resumen ── */
+.summary-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 20px;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+.summary-bar span b {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+/* ── Secciones ── */
+.section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+/* ── Tablas ── */
+.table-container {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+thead tr {
+  background: linear-gradient(135deg, #1e3a5f, #1a3356);
+}
+
+thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #60a5fa;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  border-top: 1px solid rgba(59, 130, 246, 0.1);
+  transition: background 0.2s;
+}
+
+tbody tr:hover {
+  background: rgba(59, 130, 246, 0.07);
+}
+
+tbody td {
+  padding: 11px 16px;
+  color: #cbd5e1;
+}
+
+.empty-row td {
+  text-align: center;
+  color: #475569;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* ── Colores de montos ── */
+.monto-positivo {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.monto-negativo {
+  color: #f87171;
+  font-weight: 600;
+}
+
+.monto-ahorro {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.monto-info {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+/* ── Badges de estado ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pendiente {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.badge-pagado {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+/* ── Botones de acción ── */
+.btn-del {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-del:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.btn-toggle {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: background 0.2s;
+}
+
+.btn-toggle:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
 }
