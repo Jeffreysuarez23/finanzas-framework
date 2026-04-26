@@ -287,7 +287,9 @@ body {
 }
 
 .section-title {
-  color: #60a5fa;
+  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  background-clip: text;
+  color: transparent;
   font-size: 1.4rem;
   font-weight: 700;
 }
@@ -446,7 +448,8 @@ body {
 /* ── Wrapper principal ── */
 .movimientos-wrapper {
   padding: 24px;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(59, 130, 246, 0.3);
   display: flex;
@@ -466,7 +469,9 @@ body {
 .mov-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #60a5fa;
+  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  background-clip: text;
+  color: transparent;
 }
 
 /* ── Botón agregar ── */
@@ -477,8 +482,8 @@ body {
   background: linear-gradient(135deg, #2563eb, #3b82f6);
   color: #fff;
   border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
+  border-radius: 13px;
+  padding: 14px 20px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -500,7 +505,8 @@ body {
   background: rgba(15, 23, 42, 0.6);
   border-radius: 12px;
   border: 1px solid rgba(59, 130, 246, 0.15);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: #94a3b8;
 }
 
@@ -560,6 +566,8 @@ tbody tr:hover {
 tbody td {
   padding: 11px 16px;
   color: #cbd5e1;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .empty-row td {
@@ -617,15 +625,32 @@ tbody td {
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid rgba(239, 68, 68, 0.3);
   color: #f87171;
-  border-radius: 6px;
-  padding: 5px 10px;
-  font-size: 0.75rem;
+  border-radius: 9px;
+  padding: 13px 20px;
+  font-size: 0.8rem; 
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .btn-del:hover {
   background: rgba(239, 68, 68, 0.2);
+}
+
+.btn-add {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  border-radius: 9px;
+  padding: 13px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: rgba(206, 238, 60, 0.2);
 }
 
 .btn-toggle {

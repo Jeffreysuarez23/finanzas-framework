@@ -142,8 +142,9 @@
                 <td>{{ item.categoria }}</td>
                 <td>{{ item.descripcion }}</td>
                 <td class="monto-positivo">{{ fmt(item.monto) }}</td>
-                <td>
-                  <button class="btn-del" @click="eliminar('ingresos', i)">Eliminar</button>
+                <td style="display: flex; gap: 6px;">
+                  <button class="btn-add">Editar</button>
+                  <button class="btn-del">Eliminar</button>
                 </td>
               </tr>
             </tbody>
@@ -170,8 +171,9 @@
               <tr v-for="(item, i) in ahorros" :key="i">
                 <td>{{ item.fecha }}</td>
                 <td class="monto-ahorro">{{ fmt(item.monto) }}</td>
-                <td>
-                  <button class="btn-del" @click="eliminar('ahorros', i)">Eliminar</button>
+                <td style="display: flex; gap: 6px;">
+                  <button class="btn-add">Editar</button>
+                  <button class="btn-del">Eliminar</button>
                 </td>
               </tr>
             </tbody>
@@ -202,8 +204,9 @@
                 <td>{{ item.categoria }}</td>
                 <td>{{ item.descripcion }}</td>
                 <td class="monto-negativo">{{ fmt(item.monto) }}</td>
-                <td>
-                  <button class="btn-del" @click="eliminar('gastos', i)">Eliminar</button>
+                <td style="display: flex; gap: 6px;">
+                  <button class="btn-add">Editar</button>
+                  <button class="btn-del">Eliminar</button>
                 </td>
               </tr>
             </tbody>
@@ -240,13 +243,9 @@
                     {{ item.pagado ? 'Pagado' : 'Pendiente' }}
                   </span>
                 </td>
-                <td>
-                  <div class="acciones">
-                    <button class="btn-toggle" @click="togglePago(i)">
-                      {{ item.pagado ? 'Pendiente' : 'Marcar pagado' }}
-                    </button>
-                    <button class="btn-del" @click="eliminar('gastosNecesarios', i)">Eliminar</button>
-                  </div>
+                <td style="display: flex; gap: 6px;">
+                  <button class="btn-add">Editar</button>
+                  <button class="btn-del">Eliminar</button>
                 </td>
               </tr>
             </tbody>
