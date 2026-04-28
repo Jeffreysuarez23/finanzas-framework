@@ -78,7 +78,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to="/consultar" class="nav-item">
+          <router-link to="/Consultar" class="nav-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <circle cx="11" cy="11" r="7"/>
               <line x1="16.5" y1="16.5" x2="21" y2="21"/>

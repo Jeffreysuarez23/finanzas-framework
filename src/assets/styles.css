@@ -678,6 +678,84 @@ tbody td {
 .acciones {
   display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+
+/* =========================================================
+   📌 GESTION DE DEUDAS
+    Estilos del apartado de perfil
+========================================================= */
+
+
+.deudas-wrapper {
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.deudas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.deudas-summary-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.deuda-card {
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.deuda-card--rojo {
+  background: #fff1f0;
+  border-left: 4px solid #dc2626;
+  border-radius: 12px;
+}
+
+.deuda-card--verde {
+  background: #e6f7e6;
+  border-radius: 12px;
+  color: #16a34a;
+  border-left: 4px solid #16a34a;
+}
+
+.deuda-card-label-rojo {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #dc2626;
+}
+
+.deuda-card-label-verde {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #16a34a;
+}
+
+.deuda-card-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.deuda-card-value--rojo { color: #dc2626; }
+.deuda-card-value--verde { color: #16a34a; }
+
+.deuda-card-sub {
+  color: #6a6b6c;
+  font-size: 0.8rem;
+  margin-top: 4px;
 }
 
 
@@ -1180,9 +1258,9 @@ tbody td {
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 5px 12px;
+  padding: 12px 14px;
   border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.80rem;
   font-weight: 700;
   white-space: nowrap;
 }

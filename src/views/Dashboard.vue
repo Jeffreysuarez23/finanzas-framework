@@ -331,6 +331,161 @@
       </div>
 
     </div>
+
+    <!-- Gestión de Deudas -->
+<div class="deudas-wrapper">
+
+  <div class="deudas-header">
+    <span class="mov-title">Gestión de Deudas</span>
+    <button class="btn-agregar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      Agregar deuda
+    </button>
+  </div>
+
+  <!-- Tarjetas resumen -->
+  <div class="deudas-summary-cards">
+    <div class="deuda-card deuda-card--rojo">
+      <div class="deuda-card-label-rojo">🔴 Deudas Pendientes (Yo debo)</div>
+      <div class="deuda-card-value deuda-card-value--rojo">$7.435.000,00</div>
+      <div class="deuda-card-sub">1 deuda(s) pendiente(s)</div>
+    </div>
+    <div class="deuda-card deuda-card--verde">
+      <div class="deuda-card-label-verde">💛 Me Deben Pendientes</div>
+      <div class="deuda-card-value deuda-card-value--verde">$60.000,00</div>
+      <div class="deuda-card-sub">2 deuda(s) pendiente(s)</div>
+    </div>
+  </div>
+
+  <!-- Deudas Pendientes (Yo debo) -->
+  <div class="section-block">
+    <div class="section-heading">■ Deudas Pendientes (Yo debo)</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th><th>Concepto</th><th>Descripción</th>
+            <th>Monto</th><th>Estado</th><th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-04-01</td>
+            <td>Efectivo</td>
+            <td>Le debo a Brayan la moto</td>
+            <td class="monto-negativo">$7.435.000,00</td>
+            <td><span class="badge badge-pendiente">Pendiente</span></td>
+            <td class="acciones">
+              <button class="btn-add">Editar</button>
+              <button class="btn-del">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Deudas Pagadas (Yo debo) -->
+  <div class="section-block">
+    <div class="section-heading">■ Deudas Pagadas (Yo debo)</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th><th>Concepto</th><th>Descripción</th>
+            <th>Monto</th><th>Estado</th><th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-04-15</td>
+            <td>Efectivo</td>
+            <td>Le debo a londoño por el lubricante de cadena.</td>
+            <td class="monto-negativo">$10.000,00</td>
+            <td><span class="badge badge-pagado">Pagada</span></td>
+            <td class="acciones">
+              <button class="btn-add">Editar</button>
+              <button class="btn-del">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Me Deben Pendientes -->
+  <div class="section-block">
+    <div class="section-heading">■ Me Deben Pendientes</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th><th>Concepto</th><th>Descripción</th>
+            <th>Monto</th><th>Estado</th><th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-04-18</td>
+            <td>Tarjeta</td>
+            <td>shein me debe plata.</td>
+            <td class="monto-positivo">$10.000,00</td>
+            <td><span class="badge badge-pendiente">Pendiente</span></td>
+            <td class="acciones">
+              <button class="btn-add">Editar</button>
+              <button class="btn-del">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2026-04-01</td>
+            <td>Efectivo</td>
+            <td>Londoño me debe plata.</td>
+            <td class="monto-positivo">$50.000,00</td>
+            <td><span class="badge badge-pendiente">Pendiente</span></td>
+            <td class="acciones">
+              <button class="btn-add">Editar</button>
+              <button class="btn-del">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Me Deben Pagadas -->
+  <div class="section-block">
+    <div class="section-heading">■ Me Deben Pagadas</div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th><th>Concepto</th><th>Descripción</th>
+            <th>Monto</th><th>Estado</th><th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-04-05</td>
+            <td>Efectivo</td>
+            <td>Simon me debe esa plata de la pizza.</td>
+            <td class="monto-positivo">$14.000,00</td>
+            <td><span class="badge badge-pagado">Pagada</span></td>
+            <td class="acciones">
+              <button class="btn-add">Editar</button>
+              <button class="btn-del">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
   </div>
 </template>
 
