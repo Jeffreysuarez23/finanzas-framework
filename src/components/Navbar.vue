@@ -27,7 +27,7 @@
       <span class="section-label">PRINCIPAL</span>
       <ul class="nav-list">
         <li>
-          <a href="#" class="nav-item" :class="{ active: activeMenu === 'dashboard' }" @click.prevent="setActive('dashboard')">
+          <router-link to="/" class="nav-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="3" y="3" width="7" height="7" rx="1"/>
               <rect x="14" y="3" width="7" height="7" rx="1"/>
@@ -35,26 +35,27 @@
               <rect x="14" y="14" width="7" height="7" rx="1"/>
             </svg>
             Dashboard
-          </a>
+          </router-link>
         </li>
 
         <li>
-          <a href="#" class="nav-item" :class="{ active: activeMenu === 'graficos' }" @click.prevent="setActive('graficos')">
+          <router-link 
+            to="/GraficosResumen" class="nav-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
             </svg>
             Graficos y resumen
-          </a>
+          </router-link>
         </li>
 
         <li>
-          <a href="#" class="nav-item" :class="{ active: activeMenu === 'perfil' }" @click.prevent="setActive('perfil')">
+          <router-link to="/perfil" class="nav-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <circle cx="12" cy="8" r="4"/>
               <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
             </svg>
             Perfil
-          </a>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -66,24 +67,24 @@
       <span class="section-label">MOVIMIENTOS</span>
       <ul class="nav-list">
         <li>
-          <a href="#" class="nav-item" :class="{ active: activeMenu === 'historial' }" @click.prevent="setActive('historial')">
+          <router-link to="/HistorialAcciones" class="nav-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <rect x="5" y="2" width="14" height="20" rx="2"/>
               <line x1="9" y1="7" x2="15" y2="7"/>
               <line x1="9" y1="11" x2="15" y2="11"/>
               <line x1="9" y1="15" x2="12" y2="15"/>
             </svg>
-            Historial de movimientos
-          </a>
+            Historial de acciones
+          </router-link>
         </li>
         <li>
-          <a href="#" class="nav-item" :class="{ active: activeMenu === 'consultar' }" @click.prevent="setActive('consultar')">
+          <router-link to="/consultar" class="nav-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <circle cx="11" cy="11" r="7"/>
               <line x1="16.5" y1="16.5" x2="21" y2="21"/>
             </svg>
             Consultar
-          </a>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -94,22 +95,7 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      activeMenu: 'dashboard'
-    }
-  },
-  methods: {
-    setActive(menu) {
-      this.activeMenu = menu
-      this.$emit('menu-changed', menu)
-    },
-    handleLogout() {
-      console.log('Cerrando sesión...')
-    }
-  }
-}
+
 </script>
 
 <style scoped>
