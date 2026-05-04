@@ -751,6 +751,359 @@ tbody td {
 }
 
 
+
+/* =========================================================
+   📌 MODALES DE LOS BOTONES MOVIMIENTO, DEUDA, Y ABONO DEUDA
+    Estilos del apartado de perfil
+========================================================= */
+
+
+
+/* ── MODAL OVERLAY ───────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+}
+
+.modal-box {
+  background: #1a1f35;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ── MODAL HEADER ────────────────────────────────────────── */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  background: #1a1f35;
+  z-index: 1;
+  border-radius: 16px 16px 0 0;
+}
+
+.modal-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modal-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #818cf8;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+}
+
+/* ── MODAL BODY ──────────────────────────────────────────── */
+.modal-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── FORM FIELDS ─────────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: #0f1225;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 14px;
+  padding: 0 12px;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group select option {
+  background: #1a1f35;
+  color: #e2e8f0;
+}
+
+.form-group textarea {
+  height: auto;
+  padding: 10px 12px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.input-prefix {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.prefix-symbol {
+  position: absolute;
+  left: 12px;
+  color: #64748b;
+  font-size: 15px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-prefix input {
+  padding-left: 26px;
+}
+
+/* ── MODAL ACTIONS ───────────────────────────────────────── */
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.btn-cancelar {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.btn-cancelar:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-guardar {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: inherit;
+}
+
+.btn-guardar:hover {
+  background: #6366f1;
+}
+
+.btn-guardar:active {
+  transform: scale(0.98);
+}
+
+/* ── BADGES TIPO ─────────────────────────────────────────── */
+.badge-tipo {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.badge-tipo--ingreso {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.badge-tipo--gasto {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.badge-tipo--gasto_necesario {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.25);
+}
+
+.badge-tipo--ahorro {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+/* ── TOAST ───────────────────────────────────────────────── */
+.toast-success {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ── TRANSITIONS ─────────────────────────────────────────── */
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.modal-fade-enter-active .modal-box,
+.modal-fade-leave-active .modal-box {
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+.modal-fade-enter-from .modal-box {
+  transform: translateY(-16px) scale(0.97);
+}
+
+.modal-fade-leave-to .modal-box {
+  transform: translateY(8px) scale(0.97);
+  opacity: 0;
+}
+
+.toast-fade-enter-active,
+.toast-fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-fade-enter-from,
+.toast-fade-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* ── DEUDAS BUTTONS ROW ──────────────────────────────────── */
+.deudas-btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-abonar {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  color: #34d399 !important;
+}
+
+.btn-abonar:hover {
+  background: rgba(16, 185, 129, 0.2) !important;
+}
+
+/* ── MODAL ICON VARIANTS ─────────────────────────────────── */
+.modal-icon--rojo {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.modal-icon--verde {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+/* ── GUARDAR BUTTON VARIANTS ─────────────────────────────── */
+.btn-guardar--rojo {
+  background: #dc2626 !important;
+}
+
+.btn-guardar--rojo:hover {
+  background: #ef4444 !important;
+}
+
+.btn-guardar--verde {
+  background: #059669 !important;
+}
+
+.btn-guardar--verde:hover {
+  background: #10b981 !important;
+}
+
+/* ── FORM HINTS ──────────────────────────────────────────── */
+.form-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.form-optional {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 400;
+}
+
+
 /* =========================================================
    📌 GESTION DE DEUDAS
     Estilos del apartado de perfil
