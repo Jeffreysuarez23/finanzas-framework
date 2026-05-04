@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #000;
+}
+
 body {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   font-family: 'Segoe UI', sans-serif;
