@@ -1,47 +1,40 @@
 <template>
   <div class="login-bg">
     <div class="login-card">
-
       <div class="login-header">
         <h1 class="login-title">Iniciar sesión</h1>
       </div>
 
-      <div class="login-body">
-
+      <form class="login-body" @submit.prevent>
         <div class="field-group">
           <label class="field-label">Usuario o Correo Electrónico</label>
-          <input
-            type="text"
-            class="field-input"
-            placeholder="Ej. john.doe@example.com"
-          />
+          <input type="text" class="field-input" placeholder="Ej. john.doe@example.com" />
         </div>
 
         <div class="field-group">
           <label class="field-label">Contraseña</label>
-          <input
-            type="password"
-            class="field-input"
-            placeholder="••••••••••"
-          />
+          <input type="password" class="field-input" placeholder="••••••••••" />
         </div>
 
-        <button class="btn-login">Iniciar sesión</button>
+        <button type="submit" class="btn-login">Iniciar sesión</button>
 
         <div class="login-links">
-          <span class="login-link">¿No tienes una cuenta? <a href="#">Regístrate</a></span>
+          <span class="login-link">¿No tienes una cuenta? <router-link to="/Registrar">Regístrate</router-link></span>
           <a href="#" class="login-link">¿Olvidaste tu contraseña?</a>
+          <router-link to="/" class="login-link">Dashboard</router-link>
         </div>
-
-      </div>
+      </form>
     </div>
   </div>
 </template>
 
 <script setup>
+import router from '@/router';
+
 </script>
 
 <style scoped>
+
 .login-bg {
   min-height: 100vh;
   background: #060910;
@@ -107,7 +100,9 @@
   padding: 14px 18px;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   width: 100%;
   box-sizing: border-box;
 }

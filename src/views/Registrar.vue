@@ -6,7 +6,7 @@
         <h1 class="login-title">Registrar cuenta</h1>
       </div>
 
-      <div class="login-body">
+      <form class="login-body" @submit.prevent>
 
         <div class="fields-row">
           <div class="field-group">
@@ -41,13 +41,13 @@
           </div>
         </div>
 
-        <button class="btn-login">Registrarse</button>
+        <button type="submit" class="btn-login">Registrarse</button>
 
         <div class="login-links">
-          <span class="login-link">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></span>
+          <span class="login-link">¿Ya tienes cuenta? <router-link to="/Login">Inicia sesión</router-link></span>
         </div>
 
-      </div>
+      </form>
     </div>
   </div>
 </template>

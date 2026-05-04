@@ -24,12 +24,51 @@ body {
   min-height: 100vh;
   background-color: #0d1117;
   overflow-y: auto;
+  transition: margin-left 0.3s ease;
 }
 
 /* =========================================================
    📌 NAVBAR
    Estilos de la barra de navegación izquierda
 ========================================================= */
+
+/* ── Mobile Menu Overlay & Button ── */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  background: #1e293b;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background: #0f172a;
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 90;
+}
 
 /* ── Sidebar fijo a la izquierda ── */
 .sidebar {
@@ -45,6 +84,32 @@ body {
   overflow-y: auto;
   z-index: 100;
   border-right: 1px solid rgba(99, 120, 180, 0.12);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidebar-overlay {
+    display: block;
+  }
+  
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
 }
 
 /* ── Menu links siempre activo ── */
@@ -537,7 +602,7 @@ body {
 /* ── Tablas ── */
 .table-container {
   border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto;
   border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
@@ -710,6 +775,12 @@ tbody td {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .deudas-summary-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .deuda-card {
@@ -1492,7 +1563,7 @@ tbody td {
 /* ── Tabla ── */
 .table-container {
   border-radius: 14px;
-  overflow: hidden;
+  overflow-x: auto;
   border: 1px solid rgba(59, 130, 246, 0.15);
 }
 
